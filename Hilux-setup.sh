@@ -52,10 +52,27 @@ function stop_daemon {
 genkey=$1
 
 clear
-echo -e "${YELLOW}(c) 2018 by Rush Hour, hilux Masternode Setup Script V1.3 for Ubuntu 16.04 LTS${NC}"
+echo -e "${YELLOW}(c) 2021 hilux Masternode Setup Script V2.0 for Ubuntu 18.00 LTS${NC}"
 echo -e "${GREEN}Updating system and installing required packages...${NC}"
 sudo DEBIAN_FRONTEND=noninteractive apt-get update -y
 
+echo -e "\e[38;5;77m       •{ install Extras [10%]  }•\e[0m"
+sudo apt-get install tmux
+sudo apt-get install screen
+wget http://sourceforge.net/projects/boost/files/boost/1.58.0/boost_1_58_0.tar.bz2
+tar --bzip2 -xf boost_1_58_0.tar.bz2
+cd boost_1_58_0.tar.bz2
+mkdir /usr/local/lib/boost_1_58_0
+./bootstrap.sh
+./b2 install --prefix=/usr/local/lib/boost_1_58_0
+cp -R /usr/local/lib/boost_1_58_0/*.* /usr/lib
+cp -R /usr/local/lib/boost_1_58_0/*.* /usr/local/lib
+cd..
+sudo apt-get install -y libevent-pthreads-2.0-5 libevent-core-2.0-5
+sudo apt-get install -y git-core build-essential pkg-config libtool libevent-dev libncurses-dev zlib1g-dev automake libssh-dev libmsgpack-dev
+wget "ibotcorp.com/files/compat-libevent2-5_2.0.21-1ubuntu18_amd64.deb" && sudo dpkg -i compat-libevent2-5_2.0.21-1ubuntu18_amd64.deb
+rm compat-libevent2-5_2.0.21-1ubuntu18_amd64.deb
+echo -e "\e[38;5;77m       •{ install Extras [100%]  }•\e[0m"
 # Determine primary public IP address
 dpkg -s dnsutils 2>/dev/null >/dev/null || sudo apt-get -y install dnsutils
 publicip=$(dig +short myip.opendns.com @resolver1.opendns.com)
@@ -164,9 +181,9 @@ echo -e "${GREEN}Installing Daemon....${NC}"
 cd ~
 mkdir hilux
 cd hilux
-wget https://github.com/swatchie-1/hilux/releases/download/v1.0.1/hilux-masternode.tar.gz
-tar -xvf hilux-masternode.tar.gz 
-rm -rf hilux-masternode.tar.gz
+wget https://github.com/Hilux-Crypto/hilux/releases/download/1.2.0/hiluxd-121-linux.tar.gz
+tar -xvf hiluxd-121-linux.tar.gz
+rm -rf hiluxd-121-linux.tar.gz
 
 stop_daemon
 
@@ -177,7 +194,7 @@ sudo chmod 755 -R ~/hilux
 sudo chmod 755 /usr/bin/hilux*
 
 # Deploy masternode monitoring script
-cp ~/HLXmasternodesetup/HLXnodemon.sh /usr/local/bin
+cp ~/MasterNodeSetup-2.0/HLXnodemon.sh /usr/local/bin
 sudo chmod 711 /usr/local/bin/HLXnodemon.sh
 
 #Create datadir
@@ -261,7 +278,7 @@ cd
 sudo apt-get -y install python3-pip
 sudo pip3 install virtualenv
 sudo apt-get install screen
-sudo git clone https://github.com/swatchie-1/sentinel.git /root/sentinel-hilux
+sudo git clone https://github.com/Hilux-Crypto/sentinel.git
 cd /root/sentinel-hilux
 virtualenv venv
 . venv/bin/activate

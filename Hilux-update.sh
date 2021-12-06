@@ -1,12 +1,12 @@
 #!/bin/bash
 
 COIN_PATH='/usr/bin/'
-COIN_TGZ='https://github.com/swatchie-1/hilux/releases/download/v1.0.1/hilux-masternode.tar.gz'
+COIN_TGZ='https://github.com/Hilux-Crypto/hilux/releases/download/1.2.0/hiluxd-121-linux.tar.gz'
 COIN_ZIP=$(echo $COIN_TGZ | awk -F'/' '{print $NF}')
 
 #!/bin/bash
 # Hilux Update Script
-# (c) 2018 by ETS5 for Hilux Coin 
+# (c) 2021 Hilux Coin 
 #
 # Usage:
 # bash Hilux-update.sh 
@@ -46,10 +46,10 @@ function stop_daemon {
 }
 #Function detect_ubuntu
 
- if [[ $(lsb_release -d) == *16.04* ]]; then
-   UBUNTU_VERSION=16
+ if [[ $(lsb_release -d) == *18.04* ]]; then
+   UBUNTU_VERSION=18.04
 else
-   echo -e "${RED}You are not running Ubuntu 16.04, Installation is cancelled.${NC}"
+   echo -e "${RED}You are not running Ubuntu 18.04, Installation is cancelled.${NC}"
    exit 1
 
 fi
@@ -68,7 +68,7 @@ sudo rm -rf ~/hilux
 sudo rm -rf ~/usr/bin/hilux*
 
 #Install new Binaries
-echo -e "${YELLOW}Installing v1.0.1...${NC}"
+echo -e "${YELLOW}Installing v1.2.0...${NC}"
 cd ~
 mkdir hilux
 cd hilux

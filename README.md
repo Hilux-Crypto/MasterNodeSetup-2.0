@@ -1,10 +1,10 @@
-# HLXmasternodesetup
+# That is a modification of HLXmasternodesetup
 
 **NOTE:** This installation guide is provided as is with no warranties of any kind.
 
-**NOTE:** This newer version of the script (v1.1) does not ask for IP address or masternode genkey anymore. Instead the __script will detect VPS IP Address and generate Masternode Private Key (genkey) automatically__. It will also create a 2GB swap file.  
+**NOTE:** This newer version of the script (v1.2.0) does not ask for IP address or masternode genkey anymore. Instead the __script will detect VPS IP Address and generate Masternode Private Key (genkey) automatically__. It will also create a 2GB swap file.  
 
-If you follow the steps and use a newly installed Ubuntu 16.04 VPS, it will automatically configure and start your Hilux Masternode. Ubuntu 17.10 and other Linux distros are not currently supported.
+If you follow the steps and use a newly installed Ubuntu 18.00 VPS, it will automatically configure and start your Hilux Masternode. Ubuntu 17.10 and other Linux distros are not currently supported.
 
 Steps:
 
@@ -74,7 +74,7 @@ git pull
 **5) Run the install script** which will download wallet binaries from github repository and install and configure your masternode with all necessary options.
 
 ```bash
-cd ~/HLXmasternodesetup
+cd ~/MasterNodeSetup-2.0
 sudo bash Hilux-setup.sh [Masternode_Private_Key]
 ```
 __NOTE:__ This process may take anywhere from 5 to 20 minutes, depending on your VPS HW specs. If it's not your very first ever masternode setup, you may want to speed up the process by doing things in parallel. While the HLXmasternodesetup script is running on the VPS, you can spend this time getting ready to start your new masternode from your Hot Wallet (also referred to as Control Wallet) by following instructions in next step (6).
@@ -307,4 +307,4 @@ or BTC to **3H1JNkydHxDbhoXLREpxXccvyNh7Awr2jX**
 
 
 
-(c) 2018 by Rush Hour, for HLX
+(c) 2021 HLX
