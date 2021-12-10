@@ -1,6 +1,6 @@
 #!/bin/bash
-# Hilux Masternode Setup Script V1.3 for Ubuntu 16.04 LTS
-# (c) 2018 by Rush Hour, for Hilux
+# Hilux Masternode Setup Script V1.5 for Ubuntu 18.04 LTS
+# Original start idea 2018 by Rush Hour, for Hilux
 #
 # Script will attempt to autodetect primary public IP address
 # and generate masternode private key unless specified in command line
@@ -181,7 +181,7 @@ echo -e "${GREEN}Installing Daemon....${NC}"
 cd ~
 mkdir hilux
 cd hilux
-wget https://github.com/Hilux-Crypto/hilux/releases/download/1.2.0/hiluxd-121-linux.tar.gz
+wget https://github.com/Hilux-Crypto/Hilux-Master-Node/releases/download/1.2.0/hiluxd-121-linux.tar.gz
 tar -xvf hiluxd-121-linux.tar.gz
 rm -rf hiluxd-121-linux.tar.gz
 
