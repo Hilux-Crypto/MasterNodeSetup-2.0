@@ -61,12 +61,12 @@ To download (clone) the script to your VPS, use the following command in VPS Lin
 
 ```bash
 cd ~
-git clone https://github.com/ETS5/HLXmasternodesetup
+git clone https://github.com/Hilux-Crypto/MasterNodeSetup-2.0.git
 ```
 
 __NOTE:__ in case if you will need to re-download this setup script from github repo, use the following git command:
 ```bash
-cd ~/HLXmasternodesetup
+cd ~/MasterNodeSetup-2.0
 git reset --hard
 git pull
 ```
@@ -300,11 +300,6 @@ Press Ctrl-C to Exit...
 ```
 
 
-If you found this script and masternode setup guide helpful...,
-
-...please donate to the devfound: HLX  **HE1Ns83C6HRryy7jgVJHFCFexfC8PpTQpr**,
-or BTC to **3H1JNkydHxDbhoXLREpxXccvyNh7Awr2jX**
 
 
 
-(c) 2021 HLX
